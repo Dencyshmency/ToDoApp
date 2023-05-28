@@ -1,7 +1,4 @@
-import { IoMdDoneAll } from "react-icons/Io";
-import { FaTasks } from "react-icons/Fa";
-
-import { MdRemoveDone } from "react-icons/md";
+import { MdRemoveDone, MdDoneAll, MdArticle } from "react-icons/md";
 import { TbSettingsFilled, TbLogin } from "react-icons/tb";
 import { Switch } from "antd";
 
@@ -60,7 +57,7 @@ const Navbar = ({
                 }`}
                 onClick={() => myDonedTask()}
               >
-                <IoMdDoneAll className="navbar-icon" />
+                <MdDoneAll className="navbar-icon" />
                 <p>Doned task</p>
               </li>
               <li
@@ -79,7 +76,7 @@ const Navbar = ({
                 }`}
                 onClick={() => myAllTask()}
               >
-                <FaTasks className="navbar-icon" />
+                <MdArticle className="navbar-icon" />
                 <p>All Tasks</p>
               </li>
             </ul>
