@@ -15,12 +15,12 @@
   --cl-doned-icon: rgba(133, 255, 122, 0.925);
 }
 
-@import "../app/src/header/_header.scss";
-@import "../app/src/navbar/_navbar.scss";
-@import "../app/src/newtask/_newtask.scss";
-@import "../app/src/login/_login.scss";
-@import "../app/src/theme/_theme.scss";
-@import "../app/src/task/_task.scss";
+@import "./src/header/_header.scss";
+@import "./src/navbar/_navbar.scss";
+@import "./src/newtask/_newtask.scss";
+@import "./src/login/_login.scss";
+@import "./src/theme/_theme.scss";
+@import "./src/task/_task.scss";
 
 [white] {
   --cl-main-color-task: #1677ff;
