@@ -1,0 +1,180 @@
+.wrapper-task {
+  max-width: 230px;
+  width: 100%;
+  height: fit-content;
+  z-index: 10;
+  border-radius: 16px;
+
+  .wrapper-task-panel {
+    background: rgba(0, 0, 0, 0.466);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    // backdrop-filter: blur(11.6px);
+    // -webkit-backdrop-filter: blur(11.6px);
+    border: 1px solid var(--cl-main-color-task);
+    padding: 20px;
+    max-width: 230px;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transition: 0.3s linear;
+    overflow-y: hidden;
+
+    .wrapper-panel {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        background: initial;
+        border: none;
+        cursor: pointer;
+
+        .task-icon {
+          font-size: 23px;
+          color: var(--cl-button-text-color);
+          transition: 0.3s linear;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        &:hover .task-delete {
+          transition: 0.3s linear;
+          color: var(--cl-delete-icon);
+        }
+        &:hover .task-change {
+          transition: 0.3s linear;
+          color: var(--cl-change-icon);
+        }
+        &:hover .task-status {
+          transition: 0.3s linear;
+          color: var(--cl-doned-icon);
+        }
+        .done-status {
+          color: var(--cl-doned-icon);
+        }
+      }
+
+      .close-task-change {
+        display: none;
+      }
+    }
+
+    .task-text {
+      margin-top: 30px;
+      transition: 0.3s linear;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      .wrapper-task-text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .wrapper-text {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          border: 1px solid var(--cl-main-color-task);
+          box-shadow: 0px 0px 15px 8px rgba(22, 119, 255, 0.2);
+          border-radius: 6px;
+          padding: 10px 0;
+          backdrop-filter: blur(50.6px);
+          -webkit-backdrop-filter: blur(50.6px);
+
+          .task-texts {
+            font-size: 18px;
+            color: var(--cl-button-text-color);
+          }
+        }
+        .doned-wrapper {
+          border: 1px solid var(--cl-doned-icon);
+          transition: 0.3s linear;
+        }
+      }
+
+      .wrapper-redact {
+        // transition: 0.3s linear;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .input-text {
+          width: 100%;
+          height: 43px;
+
+          .text-input {
+            width: 100%;
+            outline: none;
+            border: 1px solid var(--cl-main-color-task);
+            box-shadow: 0px 0px 15px 8px rgba(22, 119, 255, 0.2);
+            border-radius: 6px;
+            padding: 0 20px;
+            height: 100%;
+            background-color: initial;
+            font-size: 18px;
+            color: var(--cl-button-text-color);
+            backdrop-filter: blur(50.6px);
+            -webkit-backdrop-filter: blur(50.6px);
+            text-align: center;
+          }
+
+          ::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+          }
+        }
+      }
+    }
+
+    .apply-change {
+      opacity: 0;
+      transition: 0.3s linear;
+      cursor: pointer;
+      background: var(--cl-main-color-task);
+      border: 2px solid var(--cl-main-color-task);
+      color: var(--cl-button-text-color);
+      border-radius: 8px;
+      padding: 8px 0;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0px 0px 15px 8px rgba(22, 119, 255, 0.2);
+      transform: translateY(70px);
+      visibility: hidden;
+
+      &:hover {
+        transition: 0.3s linear;
+        background: initial;
+        box-shadow: 0px 0px 15px 8px rgba(22, 119, 255, 0.2),
+          0px 0px 15px 8px rgba(22, 119, 255, 0.2) inset;
+        border: 2px solid var(--cl-main-color-task);
+      }
+    }
+
+    .open-apply-change {
+      opacity: 1;
+      visibility: visible;
+      transition: 0.3s linear;
+      transform: translateY(0);
+    }
+
+    &:hover {
+      transition: 0.3s linear;
+      transform: scale(1.05);
+    }
+  }
+
+  .doned-wrapper {
+    border: 1px solid var(--cl-doned-icon);
+    transition: 0.3s linear;
+  }
+}

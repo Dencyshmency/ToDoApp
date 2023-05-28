@@ -1,0 +1,222 @@
+.header-wrapper {
+  width: 100%;
+  background-color: var(--cl-theme-color);
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  z-index: 1000;
+  transition: 0.3s linear;
+
+  .user-name {
+    .user-name-style {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--cl-white-text-color);
+    }
+  }
+
+  .buttons-settings {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    .button-login-wrapper {
+      margin-left: 40px;
+
+      .button-login {
+        cursor: pointer;
+        background: initial;
+        border: none;
+
+        font-weight: 600;
+        transition: 0.3s ease;
+        color: var(--cl-white-text-color);
+
+        &:hover {
+          color: #1677ff;
+          transition: 0.3s linear;
+          background-color: initial;
+        }
+
+        .login-icon {
+          font-size: 36px;
+        }
+      }
+    }
+
+    .setting-button {
+      background: initial;
+      border: none;
+
+      .setting-icon {
+        font-size: 24px;
+        color: var(--cl-setting-color);
+        cursor: pointer;
+      }
+    }
+  }
+  .button-add-task {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-right: 20px;
+
+    .burger-menu {
+      display: none;
+      position: relative;
+      cursor: pointer;
+      background: initial;
+      border: none;
+      justify-content: center;
+      padding: 7px 0;
+
+      .burger-line {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background: black;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background: black;
+        top: 0px;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background: black;
+        bottom: 0px;
+      }
+    }
+
+    .button-addtask {
+      background: var(--cl-main-color);
+      border: 2px solid var(--cl-main-color);
+      color: var(--cl-button-text-color);
+      border-radius: 8px;
+      padding: 8px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: 0.3s linear;
+      box-shadow: 0px 0px 15px 8px rgba(22, 119, 255, 0.2);
+
+      &:hover {
+        transition: 0.3s linear;
+        background-color: initial;
+        color: #1677ff;
+        box-shadow: 0px 0px 15px 8px rgba(22, 119, 255, 0.2),
+          0px 0px 15px 8px rgba(22, 119, 255, 0.2) inset;
+        border: 2px solid var(--cl-main-color);
+      }
+    }
+
+    .button-addtask-tablet {
+      display: none;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .header-wrapper {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .buttons-settings {
+      display: none;
+
+      .switch {
+        display: none;
+      }
+
+      .button-login-wrapper {
+        margin-left: 40px;
+
+        .button-login {
+          display: none;
+          cursor: pointer;
+          background: initial;
+          border: none;
+
+          font-weight: 600;
+          transition: 0.3s ease;
+          color: var(--cl-white-text-color);
+
+          &:hover {
+            color: #1677ff;
+            transition: 0.3s linear;
+            background-color: initial;
+          }
+
+          .login-icon {
+            font-size: 36px;
+          }
+        }
+      }
+
+      .setting-button {
+        display: none;
+        background: initial;
+        border: none;
+
+        .setting-icon {
+          font-size: 24px;
+          color: var(--cl-setting-color);
+          cursor: pointer;
+        }
+      }
+    }
+
+    .button-add-task {
+      .burger-menu {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        background: initial;
+        border: none;
+        display: flex;
+        justify-content: center;
+        padding: 7px 0;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 560px) {
+  .header-wrapper {
+    padding: 0 20px;
+    .button-add-task {
+      .button-addtask {
+        display: none;
+      }
+
+      .button-addtask-tablet {
+        display: block;
+        cursor: pointer;
+        transition: 0.3s linear;
+        border: none;
+        margin-right: 40px;
+
+        .tablet-icon {
+          font-size: 30px;
+        }
+
+        &:hover {
+          transition: 0.3s linear;
+          color: #1677ff;
+        }
+      }
+    }
+  }
+}
