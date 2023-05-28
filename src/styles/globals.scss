@@ -124,32 +124,9 @@ main {
       height: 100%;
       position: relative;
     }
+
+    .close-navbar {
+      z-index: 10;
+    }
   }
 }
-
-// @media all and (max-width: 375px) {
-//   .content {
-//     max-width: 1920px;
-//     width: 100%;
-//     margin: 0 auto;
-//     display: flex;
-//     position: relative;
-
-//     .navbar-panel {
-//       max-width: 375px;
-//       width: 100%;
-//       height: auto;
-//       position: absolute;
-//       top: 0;
-//       left: 0;
-//       z-index: 30;
-//       height: 100%;
-//     }
-
-//     .task-panel {
-//       width: 100%;
-//       height: 100%;
-//       position: relative;
-//     }
-//   }
-// }

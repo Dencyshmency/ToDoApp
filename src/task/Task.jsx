@@ -13,8 +13,7 @@ const Task = ({
   id,
   deleteTask,
   changeTask,
-  doned,
-  setDoned,
+
   donedTask,
   taskStatus,
 }) => {

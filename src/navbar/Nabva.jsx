@@ -1,7 +1,6 @@
 import { IoMdDoneAll } from "react-icons/Io";
-import { MdRemoveDone } from "react-icons/Md";
 import { FaTasks } from "react-icons/Fa";
-import { TbSettingsFilled, TbLogout, TbLogin } from "react-icons/tb";
+import { TbSettingsFilled, TbLogin } from "react-icons/tb";
 import { Switch } from "antd";
 
 const Navbar = ({
@@ -11,7 +10,6 @@ const Navbar = ({
   filterOnDateTask,
   openBurger,
   position,
-  openTheme,
   setOpenTheme,
   setOpenBurger,
 }) => {

@@ -139,7 +139,7 @@ export default function Home() {
         <div className="content">
           <div
             className={`navbar-panel ${
-              openBurger === false ? "navbar-panel-close" : ""
+              openBurger === false ? "close-navbar" : ""
             }`}
           >
             <Navbar

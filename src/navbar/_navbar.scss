@@ -1,7 +1,7 @@
 .navbar-wrapper {
   width: 100%;
   background-color: var(--cl-theme-color);
-  z-index: 12;
+  z-index: 30;
   height: 1080px;
 
   .navbar-items {
@@ -11,6 +11,7 @@
     justify-content: space-between;
     height: calc(100vh - 97px);
     width: 100%;
+    z-index: 99999999999999;
 
     .task-search-list {
       display: flex;
@@ -209,6 +210,7 @@
 
 .close-navbar-panel {
   transform: translateX(0);
+  z-index: -1;
 }
 
 @media all and (max-width: 768px) {
@@ -228,9 +230,10 @@
   }
 }
 
-@media all and (max-width: 513px) {
+@media all and (max-width: 768px) {
   .navbar-wrapper {
     transition: 0.3s linear;
+    height: calc(100vh - 80px);
 
     .navbar-items {
       .navbar-menu {
