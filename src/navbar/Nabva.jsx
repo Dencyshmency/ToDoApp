@@ -1,6 +1,6 @@
 import { MdRemoveDone, MdDoneAll, MdArticle } from "react-icons/md";
 import { TbSettingsFilled, TbLogin } from "react-icons/tb";
-import { Switch } from "antd";
+import { Switch, DatePicker } from "antd";
 
 const Navbar = ({
   myDonedTask,
@@ -12,8 +12,8 @@ const Navbar = ({
   setOpenTheme,
   setOpenBurger,
 }) => {
-  const dateTasksHandler = (event) => {
-    const taskDateFilter = event.target.value;
+  const dateTasksHandler = (date, dateString) => {
+    const taskDateFilter = dateString;
     console.log(taskDateFilter);
     filterOnDateTask(taskDateFilter);
   };
@@ -43,11 +43,7 @@ const Navbar = ({
       <div className="navbar-items">
         <div className="task-search-list">
           <div className="input-search">
-            <input
-              type="date"
-              className="input-search-date"
-              onChange={dateTasksHandler}
-            />
+            <DatePicker onChange={dateTasksHandler} />
           </div>
           <div className="task-list">
             <ul>

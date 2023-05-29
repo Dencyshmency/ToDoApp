@@ -5,6 +5,8 @@ import {
   MdDoneAll,
 } from "react-icons/md";
 
+import { DatePicker } from "antd";
+
 import React, { useState } from "react";
 
 const Task = ({
@@ -31,14 +33,6 @@ const Task = ({
     });
   };
 
-  const changedDateTaskHandler = (event) => {
-    setChangedTask({
-      ...changedTask,
-      taskDate: event.target.value,
-      taskId: id,
-    });
-  };
-
   const ChangedTaskHandler = () => {
     changeTask(id, changedTask);
     setOpenRedactMenu(true);
@@ -50,6 +44,14 @@ const Task = ({
 
   const DeleteTaskHandler = () => {
     deleteTask(id);
+  };
+
+  const onChange = (date, dateString) => {
+    setChangedTask({
+      ...changedTask,
+      taskDate: dateString,
+      taskId: id,
+    });
   };
 
   return (
@@ -113,12 +115,7 @@ const Task = ({
                 />
               </div>
               <div className="input-text">
-                <input
-                  className="text-input"
-                  type="date"
-                  onChange={changedDateTaskHandler}
-                  value={changedTask.taskDate}
-                />
+                <DatePicker className="text-input" onChange={onChange} />
               </div>
             </div>
           )}

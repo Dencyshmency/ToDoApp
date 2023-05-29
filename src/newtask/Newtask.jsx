@@ -1,6 +1,7 @@
 import { CgCloseR } from "react-icons/cg";
 import { v4 as uuidv4 } from "uuid";
 import React, { useState } from "react";
+import { DatePicker } from "antd";
 
 const Newtask = ({
   openNewTask,
@@ -25,10 +26,10 @@ const Newtask = ({
     });
   };
 
-  const DateTaskHandler = (event) => {
+  const onChange = (date, dateString) => {
     setCreateTask({
       ...createTask,
-      taskDate: event.target.value,
+      taskDate: dateString,
       taskId: uuidv4(),
     });
   };
@@ -68,11 +69,7 @@ const Newtask = ({
             value={createTask.taskText}
             onChange={TextTaskHandler}
           />
-          <input
-            type="date"
-            value={createTask.taskDate}
-            onChange={DateTaskHandler}
-          />
+          <DatePicker onChange={onChange} />
         </div>
         <button className="button-newtask" onClick={addTask}>
           Create task

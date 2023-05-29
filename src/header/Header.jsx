@@ -16,7 +16,7 @@ const Header = ({
   login,
   setLogin,
 }) => {
-  const [userName, setUserName] = useState();
+  const [userName, setUserName] = useState("");
 
   const logOutButton = () => {
     localStorage.setItem("currentUser", "");
@@ -31,9 +31,10 @@ const Header = ({
     }
   });
 
-  const [theme, setTheme] = useState(false);
+  // const [theme, setTheme] = useState(false);
 
   const onChange = (checked) => {
+    console.log(checked);
     if (checked === true) {
       document.body.setAttribute("white", "");
       localStorage.setItem("theme", "white");
@@ -92,7 +93,6 @@ const Header = ({
             <button className="button-addtask" onClick={openNewTaskPanel}>
               Add Task
             </button>
-
             <button
               className="button-addtask-tablet"
               onClick={openNewTaskPanel}
@@ -107,7 +107,7 @@ const Header = ({
             <button className="setting-button" onClick={openThemePanel}>
               <TbSettingsFilled className="setting-icon" />
             </button>
-            <Switch defaultChecked onChange={onChange} className="switch" />
+            <Switch onChange={onChange} className="switch" />
             <div className="button-login-wrapper">
               {login ? (
                 <button className="button-login" onClick={openLoginPanel}>
