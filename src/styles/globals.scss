@@ -21,6 +21,7 @@
 @import "./src/login/_login.scss";
 @import "./src/theme/_theme.scss";
 @import "./src/task/_task.scss";
+@import "./src/footer/_footer.scss";
 
 [white] {
   --cl-main-color-task: #1677ff;
@@ -37,18 +38,23 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+html {
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 main {
   width: 100%;
-  height: 100%;
+
+  position: relative;
 }
 
 .content {
   max-width: 1920px;
   width: 100%;
+  height: auto;
   margin: 0 auto;
   display: flex;
   position: relative;
@@ -56,14 +62,13 @@ main {
   .navbar-panel {
     max-width: 300px;
     width: 100%;
-    height: auto;
-    position: relative;
+    z-index: 2;
   }
 
   .task-panel {
     width: 100%;
     height: 100%;
-    position: relative;
+    position: absolute;
   }
 }
 
@@ -71,13 +76,16 @@ main {
   width: 100%;
   background-color: var(--cl-theme-color);
   overflow-y: hidden;
+  transition: 0.3s linear;
 }
 
 .bg-image {
   width: 100%;
-
+  position: absolute;
+  height: auto;
   z-index: 1;
   object-fit: cover;
+  z-index: -1;
 }
 
 .tasks-list {
