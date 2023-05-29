@@ -31,8 +31,6 @@ const Header = ({
     }
   });
 
-  // const [theme, setTheme] = useState(false);
-
   const onChange = (checked) => {
     console.log(checked);
     if (checked === true) {
