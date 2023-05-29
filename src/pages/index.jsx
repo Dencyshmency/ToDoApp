@@ -9,7 +9,7 @@ import Newtask from "@/newtask/Newtask";
 import Login from "@/login/Login";
 import Theme from "@/theme/Theme";
 import Task from "@/task/Task";
-import Footer from "@/footer/footer";
+import Footer from "@/footer/Footer";
 
 import bg from "public/background.jpg";
 import bg2 from "public/background2.jpg";
