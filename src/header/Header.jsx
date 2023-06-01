@@ -100,7 +100,7 @@ const Header = ({
               className="burger-menu"
               onClick={() => setOpenBurger(!openBurger)}
             >
-              <span className="burger-line"></span>
+              <span className="burger-line" />
             </button>
 
             <button className="button-addtask" onClick={openNewTaskPanel}>
