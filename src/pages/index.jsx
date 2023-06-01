@@ -11,15 +11,6 @@ import Theme from "@/theme/Theme";
 import Task from "@/task/Task";
 import Footer from "@/footer/Footer";
 
-import bg from "public/background.jpg";
-import bg2 from "public/background2.jpg";
-import bg3 from "public/background3.jpg";
-import bg4 from "public/background4.jpg";
-import bg5 from "public/background5.jpg";
-import bg6 from "public/background6.jpg";
-import bg7 from "public/background7.jpg";
-import bg9 from "public/background9.jpg";
-
 export default function Home() {
   const [openNewTask, setOpenNewTask] = useState(false);
   const [openLogin, setOpenLogin] = useState(false);
@@ -27,18 +18,18 @@ export default function Home() {
   const [openBurger, setOpenBurger] = useState(false);
   const [login, setLogin] = useState(true);
 
-  const ImageArray = [
-    { image: bg, idImage: uuidv4() },
-    { image: bg2, idImage: uuidv4() },
-    { image: bg3, idImage: uuidv4() },
-    { image: bg4, idImage: uuidv4() },
-    { image: bg5, idImage: uuidv4() },
-    { image: bg6, idImage: uuidv4() },
-    { image: bg7, idImage: uuidv4() },
-    { image: bg9, idImage: uuidv4() },
-  ];
+  // const ImageArray = [
+  //   { image: bg, idImage: uuidv4() },
+  //   { image: bg2, idImage: uuidv4() },
+  //   { image: bg3, idImage: uuidv4() },
+  //   { image: bg4, idImage: uuidv4() },
+  //   { image: bg5, idImage: uuidv4() },
+  //   { image: bg6, idImage: uuidv4() },
+  //   { image: bg7, idImage: uuidv4() },
+  //   { image: bg9, idImage: uuidv4() },
+  // ];
 
-  const [bgImage, setBgImage] = useState(bg);
+  // const [bgImage, setBgImage] = useState(bg);
   const [position, setPosition] = useState({
     doned: false,
     notDoned: false,
@@ -121,6 +112,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <Header
         setOpenNewTask={setOpenNewTask}
         openNewTask={openNewTask}
@@ -133,8 +125,8 @@ export default function Home() {
         login={login}
         setLogin={setLogin}
       />
+
       <main>
-        <Image src={bgImage} className="bg-image" alt="" />
         <div className="content">
           <div
             className={`navbar-panel ${
@@ -173,8 +165,8 @@ export default function Home() {
             <Theme
               openTheme={openTheme}
               setOpenTheme={setOpenTheme}
-              ImageArray={ImageArray}
-              setBgImage={setBgImage}
+              // ImageArray={ImageArray}
+              // setBgImage={setBgImage}
             />
             <div className="tasks-list">
               {arrayTasks.map((item) => (
@@ -193,6 +185,7 @@ export default function Home() {
           </div>
         </div>
       </main>
+
       <Footer />
     </>
   );

@@ -78,7 +78,7 @@ const Header = ({
 
   return (
     <div className="container">
-      <div className="content">
+      <div className="content-header">
         <div className="header-wrapper">
           <div className="button-add-task">
             <button

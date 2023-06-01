@@ -56,6 +56,9 @@ const Login = ({ openLogin, setOpenLogin, setLogin }) => {
   const re = () => {
     setLoginRegistration(false);
     let line = document.querySelector(".line");
+
+    let regh = document.querySelector(".registration");
+    console.log(regh.offsetWidth);
     line.classList.add("line-registration");
     line.classList.remove("line-login");
   };

@@ -47,29 +47,8 @@ html {
 
 main {
   width: 100%;
-
+  height: 100%;
   position: relative;
-}
-
-.content {
-  max-width: 1920px;
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  display: flex;
-  position: relative;
-
-  .navbar-panel {
-    max-width: 300px;
-    width: 100%;
-    z-index: 2;
-  }
-
-  .task-panel {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-  }
 }
 
 .container {
@@ -79,28 +58,55 @@ main {
   transition: 0.3s linear;
 }
 
-.bg-image {
+.content {
+  background-image: url(/background.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  max-width: 1920px;
   width: 100%;
-  position: absolute;
+  margin: 0 auto;
+  position: relative;
+  height: calc(100vh - 160px);
 
-  z-index: 1;
-  object-fit: cover;
-  z-index: -1;
-}
+  .navbar-panel {
+    max-width: 300px;
+    width: 100%;
+    max-height: 1080px;
+    height: calc(100vh - 160px);
+    z-index: 70;
+    position: relative;
+  }
 
-.tasks-list {
-  width: 100%;
-  max-height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 30px 30px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 30px;
-  overflow-y: scroll;
+  .task-panel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 300px;
+    z-index: 1;
+  }
+
+  .tasks-list {
+    width: 100%;
+    height: calc(100% - 0px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px 5px;
+    padding: 30px 0 30px 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+    z-index: 20;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -108,32 +114,56 @@ main {
   background: transparent;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 758px) {
   .content {
-    max-width: 1920px;
-    width: 100%;
+    background-image: url(/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     margin: 0 auto;
-    display: flex;
     position: relative;
 
     .navbar-panel {
-      max-width: 100%;
+      max-width: 300px;
       width: 100%;
-      height: auto;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 30;
+      max-height: 1080px;
+      height: calc(100vh - 160px);
+      z-index: 70;
+      position: relative;
     }
 
     .task-panel {
       width: 100%;
       height: 100%;
-      position: relative;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-left: 0;
+      z-index: 1;
+    }
+
+    .tasks-list {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 10px 5px;
+      padding: 30px 0 30px 300px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow-y: scroll;
+      z-index: 20;
     }
 
     .close-navbar {
-      z-index: 10;
+      visibility: hidden;
     }
   }
 }

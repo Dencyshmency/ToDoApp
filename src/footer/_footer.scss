@@ -2,7 +2,6 @@
   width: 100%;
   height: 80px;
   background-color: var(--cl-theme-color);
-  position: absolute;
-  bottom: 0;
+  transition: 0.3s linear;
   z-index: 100;
 }
