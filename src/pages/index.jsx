@@ -143,6 +143,12 @@ export default function Home() {
               openTheme={openTheme}
               setOpenTheme={setOpenTheme}
               setOpenBurger={setOpenBurger}
+              login={login}
+              setLogin={setLogin}
+              setOpenNewTask={setOpenNewTask}
+              setOpenLogin={setOpenLogin}
+              openLogin={openLogin}
+              openNewTask={openNewTask}
             />
           </div>
           <div className="task-panel">

@@ -103,6 +103,7 @@
       max-width: 290px;
       width: 100%;
       height: calc(100vh - 220px);
+      overflow-y: scroll;
 
       .image-panel {
         overflow-y: scroll;

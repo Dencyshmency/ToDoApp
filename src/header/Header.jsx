@@ -25,19 +25,26 @@ const Header = ({
   };
 
   useEffect(() => {
+    if (localStorage.getItem("currentUser") === null) {
+      setUserName("");
+    }
     if (localStorage.getItem("currentUser") !== "") {
       setUserName(`Welcome, ${localStorage.getItem("currentUser")}`);
       setLogin(false);
     }
   });
 
+  const [themeStatus, setThemeStatus] = useState(true);
+
   const onChange = (checked) => {
     console.log(checked);
     if (checked === true) {
+      setThemeStatus(true);
       document.body.setAttribute("white", "");
       localStorage.setItem("theme", "white");
     }
     if (checked === false) {
+      setThemeStatus(false);
       document.body.removeAttribute("white");
       localStorage.setItem("theme", "dark");
     }
@@ -49,6 +56,14 @@ const Header = ({
     }
     if (localStorage.getItem("theme") === "dark") {
       document.body.removeAttribute("white");
+    }
+
+    if (localStorage.getItem("theme") === "dark") {
+      setThemeStatus(false);
+    }
+
+    if (localStorage.getItem("theme") === "white") {
+      setThemeStatus(true);
     }
   }, []);
 
@@ -105,7 +120,11 @@ const Header = ({
             <button className="setting-button" onClick={openThemePanel}>
               <TbSettingsFilled className="setting-icon" />
             </button>
-            <Switch onChange={onChange} className="switch" />
+            <Switch
+              checked={themeStatus}
+              onClick={onChange}
+              className="switch"
+            />
             <div className="button-login-wrapper">
               {login ? (
                 <button className="button-login" onClick={openLoginPanel}>

@@ -1,5 +1,5 @@
 import { MdRemoveDone, MdDoneAll, MdArticle } from "react-icons/md";
-import { TbSettingsFilled, TbLogin } from "react-icons/tb";
+import { TbSettingsFilled, TbLogin, TbLogout } from "react-icons/tb";
 import { Switch, DatePicker } from "antd";
 
 const Navbar = ({
@@ -11,6 +11,13 @@ const Navbar = ({
   position,
   setOpenTheme,
   setOpenBurger,
+  login,
+  setLogin,
+  setOpenNewTask,
+  openNewTask,
+  setOpenLogin,
+  openLogin,
+  openTheme,
 }) => {
   const dateTasksHandler = (date, dateString) => {
     const taskDateFilter = dateString;
@@ -34,6 +41,19 @@ const Navbar = ({
     setOpenTheme(true);
   };
 
+  const logOutButton = () => {
+    localStorage.setItem("currentUser", "");
+    setUserName("");
+    setLogin(true);
+  };
+
+  const openLoginPanel = () => {
+    setOpenLogin(!openLogin);
+    if (openNewTask === true || openTheme === true) {
+      setOpenNewTask(false);
+      setOpenTheme(false);
+    }
+  };
   return (
     <div
       className={`navbar-wrapper ${
@@ -92,9 +112,15 @@ const Navbar = ({
           </div>
           <div className="line-navbar" />
           <div className="login-logout">
-            <button className="button-login">
-              <TbLogin className="login-icon" />
-            </button>
+            {login ? (
+              <button className="button-login" onClick={openLoginPanel}>
+                <TbLogin className="login-icon" />
+              </button>
+            ) : (
+              <button className="button-login" onClick={logOutButton}>
+                <TbLogout className="login-icon" />
+              </button>
+            )}
           </div>
         </div>
       </div>
