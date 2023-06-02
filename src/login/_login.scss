@@ -1,9 +1,9 @@
 .wrapper-login {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  width: calc(100% - 300px);
+  height: calc(100vh - 160px);
   background-color: rgba(0, 0, 0, 0.267);
   position: absolute;
   z-index: 50;
@@ -183,4 +183,10 @@
 .open-wrapper-login {
   visibility: visible;
   transition: 0.1s linear;
+}
+
+@media all and (max-width: 768px) {
+  .wrapper-login {
+    width: 100%;
+  }
 }

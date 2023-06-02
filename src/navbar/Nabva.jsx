@@ -19,6 +19,8 @@ const Navbar = ({
   openLogin,
   openTheme,
   setUserName,
+  themeStatus,
+  setThemeStatus,
 }) => {
   const dateTasksHandler = (date, dateString) => {
     const taskDateFilter = dateString;
@@ -27,11 +29,14 @@ const Navbar = ({
   };
 
   const onChange = (checked) => {
+    console.log(checked);
     if (checked === true) {
+      setThemeStatus(true);
       document.body.setAttribute("white", "");
       localStorage.setItem("theme", "white");
     }
     if (checked === false) {
+      setThemeStatus(false);
       document.body.removeAttribute("white");
       localStorage.setItem("theme", "dark");
     }
@@ -109,7 +114,11 @@ const Navbar = ({
                   onClick={openSettingsInNavbar}
                 />
               </button>
-              <Switch defaultChecked onChange={onChange} className="switch" />
+              <Switch
+                checked={themeStatus}
+                onClick={onChange}
+                className="switch"
+              />
             </div>
           </div>
           <div className="line-navbar" />

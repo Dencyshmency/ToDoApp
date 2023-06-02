@@ -17,6 +17,8 @@ const Header = ({
   setLogin,
   userName,
   setUserName,
+  themeStatus,
+  setThemeStatus,
 }) => {
   const logOutButton = () => {
     localStorage.setItem("currentUser", "");
@@ -25,16 +27,13 @@ const Header = ({
   };
 
   useEffect(() => {
-    if (localStorage.getItem("currentUser") === null) {
-      setUserName("");
-    }
-    if (localStorage.getItem("currentUser") !== "") {
+    if (localStorage.getItem("currentUser") !== null) {
       setUserName(`Welcome, ${localStorage.getItem("currentUser")}`);
       setLogin(false);
+    } else if (localStorage.getItem("currentUser") === null) {
+      setUserName("Welcome, new user");
     }
   });
-
-  const [themeStatus, setThemeStatus] = useState(false);
 
   const onChange = (checked) => {
     console.log(checked);
@@ -72,6 +71,7 @@ const Header = ({
     if (openLogin === true || openTheme === true) {
       setOpenLogin(false);
       setOpenTheme(false);
+      setOpenBurger(false);
     }
   };
 
@@ -80,6 +80,7 @@ const Header = ({
     if (openLogin === true || openNewTask === true) {
       setOpenLogin(false);
       setOpenNewTask(false);
+      setOpenBurger(false);
     }
   };
 
@@ -88,6 +89,7 @@ const Header = ({
     if (openNewTask === true || openTheme === true) {
       setOpenNewTask(false);
       setOpenTheme(false);
+      setOpenBurger(false);
     }
   };
 

@@ -42,6 +42,7 @@ export default function Home() {
   const [okTask, setOkTask] = useState([]);
   const [noTask, setNoTask] = useState([]);
   const [filterDate, setFilterDate] = useState([]);
+  const [themeStatus, setThemeStatus] = useState(false);
 
   useEffect(() => {
     setArrayTasks(okTask);
@@ -126,6 +127,8 @@ export default function Home() {
         setLogin={setLogin}
         setUserName={setUserName}
         userName={userName}
+        themeStatus={themeStatus}
+        setThemeStatus={setThemeStatus}
       />
 
       <main>
@@ -152,6 +155,8 @@ export default function Home() {
               openLogin={openLogin}
               openNewTask={openNewTask}
               setUserName={setUserName}
+              themeStatus={themeStatus}
+              setThemeStatus={setThemeStatus}
             />
           </div>
           <div className="task-panel">
@@ -171,12 +176,7 @@ export default function Home() {
               login={login}
               setLogin={setLogin}
             />
-            <Theme
-              openTheme={openTheme}
-              setOpenTheme={setOpenTheme}
-              // ImageArray={ImageArray}
-              // setBgImage={setBgImage}
-            />
+            <Theme openTheme={openTheme} setOpenTheme={setOpenTheme} />
             <div className="tasks-list">
               {arrayTasks.map((item) => (
                 <Task
