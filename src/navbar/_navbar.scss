@@ -317,3 +317,19 @@
     transform: translateX(-400px);
   }
 }
+
+@media all and (min-width: 222px) and (max-width: 420px) {
+  .navbar-wrapper {
+    .navbar-items {
+      .task-search-list {
+        .task-list {
+          ul {
+            .navbar-item {
+              padding-left: 25%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

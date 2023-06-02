@@ -18,6 +18,7 @@ const Navbar = ({
   setOpenLogin,
   openLogin,
   openTheme,
+  setUserName,
 }) => {
   const dateTasksHandler = (date, dateString) => {
     const taskDateFilter = dateString;
@@ -41,7 +42,7 @@ const Navbar = ({
     setOpenTheme(true);
   };
 
-  const logOutButton = () => {
+  const logOutButtonNav = () => {
     localStorage.setItem("currentUser", "");
     setUserName("");
     setLogin(true);
@@ -49,6 +50,7 @@ const Navbar = ({
 
   const openLoginPanel = () => {
     setOpenLogin(!openLogin);
+    setOpenBurger(false);
     if (openNewTask === true || openTheme === true) {
       setOpenNewTask(false);
       setOpenTheme(false);
@@ -117,7 +119,7 @@ const Navbar = ({
                 <TbLogin className="login-icon" />
               </button>
             ) : (
-              <button className="button-login" onClick={logOutButton}>
+              <button className="button-login" onClick={logOutButtonNav}>
                 <TbLogout className="login-icon" />
               </button>
             )}

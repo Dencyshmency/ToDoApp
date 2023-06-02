@@ -15,9 +15,9 @@ const Header = ({
   setOpenBurger,
   login,
   setLogin,
+  userName,
+  setUserName,
 }) => {
-  const [userName, setUserName] = useState("");
-
   const logOutButton = () => {
     localStorage.setItem("currentUser", "");
     setUserName("");
@@ -34,7 +34,7 @@ const Header = ({
     }
   });
 
-  const [themeStatus, setThemeStatus] = useState(true);
+  const [themeStatus, setThemeStatus] = useState(false);
 
   const onChange = (checked) => {
     console.log(checked);

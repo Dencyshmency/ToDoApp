@@ -37,7 +37,7 @@ export default function Home() {
   });
 
   const [arrayTasks, setArrayTasks] = useState([]);
-
+  const [userName, setUserName] = useState("");
   const [allTask, setAllTasks] = useState([]);
   const [okTask, setOkTask] = useState([]);
   const [noTask, setNoTask] = useState([]);
@@ -124,6 +124,8 @@ export default function Home() {
         setOpenBurger={setOpenBurger}
         login={login}
         setLogin={setLogin}
+        setUserName={setUserName}
+        userName={userName}
       />
 
       <main>
@@ -149,6 +151,7 @@ export default function Home() {
               setOpenLogin={setOpenLogin}
               openLogin={openLogin}
               openNewTask={openNewTask}
+              setUserName={setUserName}
             />
           </div>
           <div className="task-panel">
