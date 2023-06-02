@@ -27,11 +27,13 @@ const Header = ({
   };
 
   useEffect(() => {
-    if (localStorage.getItem("currentUser") !== null) {
+    if (localStorage.getItem("currentUser") !== "") {
       setUserName(`Welcome, ${localStorage.getItem("currentUser")}`);
       setLogin(false);
-    } else if (localStorage.getItem("currentUser") === null) {
+    }
+    if (localStorage.getItem("currentUser") == null) {
       setUserName("Welcome, new user");
+      setLogin(true);
     }
   });
 

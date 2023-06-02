@@ -56,18 +56,19 @@ const Login = ({ openLogin, setOpenLogin, setLogin }) => {
   const re = () => {
     setLoginRegistration(false);
     let line = document.querySelector(".line");
-
-    let regh = document.querySelector(".registration");
-    console.log(regh.offsetWidth);
-    line.classList.add("line-registration");
-    line.classList.remove("line-login");
+    let reg = document.querySelector(".registration").offsetWidth;
+    let log = document.querySelector(".login").offsetWidth;
+    line.style.transform = `translateX(0px)`;
+    line.style.width = reg + "px";
   };
 
   const lo = () => {
     setLoginRegistration(true);
     let line = document.querySelector(".line");
-    line.classList.add("line-login");
-    line.classList.remove("line-registration");
+    let reg = document.querySelector(".registration").offsetWidth;
+    let log = document.querySelector(".login").offsetWidth;
+    line.style.transform = `translateX(${reg + 20}px)`;
+    line.style.width = log + "px";
   };
 
   return (
